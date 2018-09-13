@@ -70,7 +70,7 @@ echo -e "Installing MySQL database... (wait)"
 # Install MySQL
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $mysql_root_password"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $mysql_root_password"
-apt-get -y install mysql-server > /dev/null 2>&1
+apt -y install mysql-server > /dev/null 2>&1
 
 echo -e "MySQL database correctly installed\n"
 
@@ -100,7 +100,7 @@ echo -e "MySQL database correctly configured\n"
 echo -e "Installing and configuring MySQL persistence addon... (wait)"
 
 # Install MySQL addon
-apt install curl > /dev/null 2>&1
+apt -y install curl > /dev/null 2>&1
 curl -X POST --header "Content-Type: application/json" --header "Accept: application/json" "http://localhost:8080/rest/extensions/persistence-mysql/install"
 sleep 30
 

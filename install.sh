@@ -106,7 +106,7 @@ sleep 30
 
 # Edit the openhab.cfg file
 mysql_url='#url='
-mysql_url_new="url=jdbc:mysql://localhost:3306/$mysql_database_name"
+mysql_url_new="url=jdbc:mysql://localhost:3306/$mysql_database_name?serverTimezone=UTC"
 mysql_user='#user='
 mysql_user_new="user=$mysql_openhab_user"
 mysql_password='#password='

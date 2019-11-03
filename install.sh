@@ -70,7 +70,7 @@ echo -e "Installing MySQL database... (wait)"
 # Install MySQL
 debconf-set-selections <<< "mysql-server mysql-server/root_password password $mysql_root_password"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $mysql_root_password"
-apt -y install mysql-server > /dev/null 2>&1
+apt -y install mariadb-server > /dev/null 2>&1
 
 echo -e "MySQL database correctly installed\n"
 
